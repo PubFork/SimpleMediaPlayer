@@ -1,6 +1,12 @@
 # SimpleMediaPlayer
 3학년 2학기 멀티미디어 프로그래밍 (차광호 교수) 1번 예제 프로젝트
 
+다음과 같은 간단한 미디어 플레이어를 DirectShow를 이용하여 만들어봅니다.
+
+<p align="center">
+  <img src="https://github.com/devetude/SimpleMediaPlayer/blob/master/RunImages/run_screenshot.gif?raw=true" width="500"/>
+</p>
+
 #* 프로젝트를 시작하기 전에...
 본 프로젝트는 **Microsoft Visual Studio Community 2013** IDE를 사용하였습니다. 프로젝트의 형태는 **Win32 Console Application**이며 프로젝트 파일을 생성하는 부분의 설명은 생략하겠습니다.
 > 1. DirectShow 프로그래밍을 위해서는 다음과 같은 **라이브러리**가 우선 포함되어야 합니다.
@@ -85,4 +91,4 @@
 기타 문의사항이 있으실 경우 아래의 **문의 수단**으로 연락해주세요.
 > **문의 수단:**
 > - 메일 : **devetude@naver.com** 또는 **devetude@gmail.com**
-> - github : **https://github.com/devetude/BOJ-PSJ/issues**
+> - github : **https://github.com/devetude/SimpleMediaPlayer/issues**
