@@ -1,7 +1,7 @@
 # SimpleMediaPlayer
 3학년 2학기 멀티미디어 프로그래밍 (차광호 교수) 1번 예제 프로젝트
 
-다음과 같은 간단한 미디어 플레이어를 DirectShow를 이용하여 만들어봅니다.
+다음과 같은 간단한 **미디어 플레이어**를 **DirectShow**를 이용하여 만들어봅니다.
 
 <p align="center">
   <img src="https://github.com/devetude/SimpleMediaPlayer/blob/master/RunImages/run_screenshot.gif?raw=true" width="500"/>
