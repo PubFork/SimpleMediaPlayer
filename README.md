@@ -48,7 +48,7 @@
 > IGraphBuilder *pGraphBuilder = NULL;
 > 
 > // COM 객체를 이용하여 Filter Graph Manager 객체 인스턴스 생성
-> CoCreateInstance(CLSID_FilterGraph, NULL, CLSCTX_INPOC_SERVER, IID_IGraphBuilder, (void **)&pGraphBuilder);
+> CoCreateInstance(CLSID_FilterGraph, NULL, CLSCTX_INPROC_SERVER, IID_IGraphBuilder, (void **)&pGraphBuilder);
 >  
 > // Filter Graph Manager 객체 인스턴스 반납
 > pGraphBuilder->Release();
