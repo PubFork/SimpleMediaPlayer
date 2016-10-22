@@ -26,7 +26,7 @@
 > ```
 
 #* COM(Component Object Model) 생성과 반납
-> DirectShow 프로그래밍에서 여러가지 필터 객체 인스턴스를 생성하기 위해서 Microsoft의 COM 라이브러리를 사용합니다. COM 라이브러리의 생성과 반납은 아래 코드와 같습니다.
+> DirectShow 프로그래밍에서 여러가지 필터 객체 인스턴스를 생성하기 위해서 Microsoft의 **COM** 라이브러리를 사용합니다. COM 라이브러리의 **생성**과 **반납**은 아래 코드와 같습니다.
 > ```c++
 > // COM 라이브러리 생성
 > CoInitialize(NULL);
@@ -34,3 +34,16 @@
 > // COM 라이브러리 반납
 > CoUninitialize();
 > ```
+
+#* Filter Graph Manager 인스턴스 생성과 반납
+> DirectShow 프로그래밍에서 직접 필터 객체와 핀 객체 연결할 때 대리자 역할인 **Filter Graph Manager**를 통해서 위와 같은 과정들을 진행하게 됩니다. COM 객체를 이용하여 Filter Graph Manager 객체 인스턴스를 **생성**하고 **반납**하는 방법은 아래 코드와 같습니다.
+> ```c++
+> // Filter Graph Manager 객체를 저장 할 포인터 변수
+> IGraphBuilder *pGraphBuilder = NULL;
+> 
+> // COM 객체를 이용하여 Filter Graph Manager 객체 인스턴스 생성
+> CoCreateInstance(CLSID_FilterGraph, NULL, CLSCTX_INPOC_SERVER, IID_IGraphBuilder, (void **)&pGraphBuilder);
+>  
+>  // Filter Graph Manager 객체 인스턴스 반납
+>  pGraphBuilder->Release();
+>  ```
