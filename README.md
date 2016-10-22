@@ -20,7 +20,17 @@
   <img src="https://github.com/devetude/SimpleMediaPlayer/blob/master/SettingImages/set_preprocessor.png?raw=true" width="500"/>
 </p>
 > 4. 마지막으로 DirectShow 프로그래밍에서는 또한 다음과 같은 **헤더 파일**을 포함해야 합니다. **dshow.h**(DirectShow 헤더 파일)와 **stdio.h**(표준 입출력 헤더 파일)를 **Main.cpp** 파일 내의 **최상단**에 다음과 같이 **include**합니다.
- ```c++
- #include <stdio.h>
- #include <dshow.h>
-```
+> ```c++
+> #include <stdio.h>
+> #include <dshow.h>
+> ```
+
+#* COM(Component Object Model) 생성과 반납
+> DirectShow 프로그래밍에서 여러가지 필터 객체 인스턴스를 생성하기 위해서 Microsoft의 COM 라이브러리를 사용합니다. COM 라이브러리의 생성과 반납은 아래 코드와 같습니다.
+> ```c++
+> // COM 라이브러리 생성
+> CoInitialize(NULL);
+> 
+> // COM 라이브러리 반납
+> CoUninitialize();
+> ```
