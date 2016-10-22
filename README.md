@@ -44,6 +44,17 @@
 > // COM 객체를 이용하여 Filter Graph Manager 객체 인스턴스 생성
 > CoCreateInstance(CLSID_FilterGraph, NULL, CLSCTX_INPOC_SERVER, IID_IGraphBuilder, (void **)&pGraphBuilder);
 >  
->  // Filter Graph Manager 객체 인스턴스 반납
->  pGraphBuilder->Release();
+> // Filter Graph Manager 객체 인스턴스 반납
+> pGraphBuilder->Release();
 >  ```
+
+#* IMediaControl, IMediaEvent 인스턴스 생성과 반납
+> 생성되어있는 Filter Graph Manager 객체 인스턴스를 가지고 미디어 스트림의 재생과 정지 등을 관리하는 **IMediaControl**과 다양한 미디어 스트림의 이벤트를 처리하는 **IMediaEvent**를 **생성**하고 **반납**하는 코드는 아래와 같습니다.
+> ```c++
+> // IMediaControl, IMediaEvent 객체를 저장 할 포인터 변수
+> IMediaControl *pMediaControl = NULL;
+> IMediaEvent * pMediaEvent = NULL;
+> 
+> // IMediaControl, IMediaEvent 객체 인스턴스 생성
+> pGraphBuilder->QueryInterface(IID_IMediaControl, (void **)&pMediaControl);
+> pGraphBuilder->QueryInterface(IID_IMediaEvent, (void **)&pMediaEvent);
