@@ -58,3 +58,22 @@
 > // IMediaControl, IMediaEvent 객체 인스턴스 생성
 > pGraphBuilder->QueryInterface(IID_IMediaControl, (void **)&pMediaControl);
 > pGraphBuilder->QueryInterface(IID_IMediaEvent, (void **)&pMediaEvent);
+>  
+>  // IMediaControl, IMediaEvent 객체 인스턴스 반납
+>  pMediaControl->Release();
+>  pMediaEvent->Release();
+
+#* 미디어 파일을 읽어와서 필터 그래프를 랜더링
+> Filter Graph Manager 객체 인스턴스의 **RenderFile** 메소드를 이용하여 미디어 파일을 읽어온 후 필터 그래프를 랜더링을 할 수 있습니다. 또한 IMediaGraph를 이용하여 가져온 미디어 파일을 재생(**Run**)하거나, 정지(**Stop**) 할 수 있습니다. 마지막으로 IMediaEvent를 이용하여 이벤트를 수신하여 처리(**WaitForCompletion**) 할 수도 있습니다.
+> ```c++
+> // Filter Graph Manager로 미디어 파일을 읽어와서 랜더링
+> pGraphBuilder->RenderFile(L"미디어 파일의 경로를 입력");
+> 
+> // IMediaControl로 미디어 파일을 재생하고 정지
+> pMediaControl->Run();
+> pMediaControl->Stop();
+> 
+> // IMediaEvent로 미디어 파일의 이벤트를 수신(재생이 끝날 때 까지 기다림)
+> long eventCode = 0;
+> pMediaEvent->WaitForCompletion(INFINITE, &eventCode);
+> ```
