@@ -39,7 +39,7 @@
 > #include <dshow.h>
 > ```
 
-#* COM(Component Object Model) 생성과 반납
+# COM(Component Object Model) 생성과 반납
 > DirectShow 프로그래밍에서 여러가지 필터 객체 인스턴스를 생성하기 위해서 Microsoft의 **COM** 라이브러리를 사용합니다. COM 라이브러리의 **생성**과 **반납**은 아래 코드와 같습니다.
 > ```c++
 > // COM 라이브러리 생성
